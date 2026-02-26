@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-6</title>
+</head>
+<body>
+    <form>
+        <label>Blood Group</label>
+        <select id="blood">
+            <option value="">no selection</option>
+            <option value="A+">A+</option>
+            <option value="B+">B+</option>
+            <option value="AB+">AB+</option>
+            <option value="O+">O+</option>
+            <option value="A-">A-</option>
+            <option value="B-">B-</option>
+            <option value="AB-">AB-</option>
+            <option value="O-">O-</option>
+        </select>
+
+        <p id="msg" style="color:red;"></p>
+        <hr width="200" align="left">
+        <input type="button" value="Submit" onclick="validBlood()">
+    </form>
+
+<script>
+function validBlood() {
+    let blood = document.getElementById("blood").value;
+    let msg = document.getElementById("msg");
+
+    if(blood === "") {
+        msg.innerHTML = "please select a blood group!";
+    } else {
+        msg.innerHTML = "successfull!";
+    }
+}
+</script>
+
+</body>
+</html>

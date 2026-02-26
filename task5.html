@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-5</title>
+</head>
+<body>
+    <form>
+        <fieldset style="width: 250px;">
+            <legend>Degree</legend>
+            <input type="checkbox" id="ssc"> SSC
+            <input type="checkbox" id="hsc"> HSC
+            <input type="checkbox" id="bsc"> BSC
+        </fieldset> <br>
+        <p id="msg" style="color:red;"></p>
+        <input type="button" value="Submit" onclick="validDegree()">
+    </form>
+
+<script>
+function validDegree() {
+    let msg = document.getElementById("msg");
+
+    let ssc = document.getElementById("ssc").checked;
+    let hsc = document.getElementById("hsc").checked;
+    let bsc = document.getElementById("bsc").checked;
+
+
+    if(!ssc && !hsc && !bsc) {
+        msg.innerHTML = "Please, select at least one option!";
+    } else {
+        msg.innerHTML = "successful!";
+    }
+}
+</script>
+</body>
+</html>
