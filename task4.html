@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question-4</title>
+</head>
+<body>
+    <form>
+         <fieldset style="width: 200px;">
+            <legend>Date of Birth</legend>
+            <input type="date" id="dob">
+
+            <p id="msg" style="color:red;"></p>
+            <hr width="200" align="left">
+            <input type="button" value="Submit" onclick="validDOB()">
+         </fieldset> <br>
+    </form>
+
+<script>
+function validDOB() {
+    let dob = document.getElementById("dob").value;
+    let msg = document.getElementById("msg");
+
+    if(dob === "") {
+        msg.innerHTML = "please, enter a date!";
+        return;
+    }
+
+    let [year, month, day] = dob.split("-");
+
+    if(day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2016) {
+        msg.innerHTML = "Invalid date! (dd:1-31, mm:1-12, yyyy:1900-2016)";
+    } else {
+        msg.innerHTML = "valid date!";
+    }
+}
+</script>
+</body>
+</html>
