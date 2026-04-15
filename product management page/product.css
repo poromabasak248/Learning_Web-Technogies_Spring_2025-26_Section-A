@@ -1,0 +1,17 @@
+
+body{
+    text-align: center;
+}
+input{
+    height: 30px;
+    width: 200px;
+    background-color: bisque;
+
+}
+form{
+   
+    height: 250px;
+    width: 400px;
+    background-color: rgb(56, 246, 205);
+     margin: 0px auto;
+}
