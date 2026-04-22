@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blood Group Form</title>
+</head>
+<body>
+
+<form action="blood.php" method="post">
+    <fieldset>
+        <legend>BLOOD GROUP</legend>
+
+        <select name="blood">
+            <option value="">not selected</option>
+            <option value="A+">A+</option>
+            <option value="A-">A-</option>
+            <option value="B+">B+</option>
+            <option value="B-">B-</option>
+            <option value="AB+">AB+</option>
+            <option value="AB-">AB-</option>
+            <option value="O+">O+</option>
+            <option value="O-">O-</option>
+        </select>
+
+        <br><br>
+        <input type="submit" value="submit">
+    </fieldset>
+</form>
+
+</body>
+</html>
+
+<?php
+if($_POST){
+    echo "Blood Group: " . $_POST['blood'];
+}
+?>

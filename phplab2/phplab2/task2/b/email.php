@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Form</title>
+</head>
+<body>
+
+<form action="email.php" method="post">
+    <fieldset>
+        <legend>EMAIL</legend>
+
+        <input type="email" name="email">
+        <br><br>
+
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+</body>
+</html>
+
+<?php
+$email = $_POST['email'];
+echo "Email: ".$email;
+
+?>
