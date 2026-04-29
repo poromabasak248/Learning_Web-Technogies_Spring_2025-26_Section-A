@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Calculator</title>
+    <style>
+        
+
+        #calculator{
+            background-color: aqua;
+            width: 230px;
+            border: 3px solid black;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        #display{
+            background-color: bisque;
+            width: 220px;
+            height: 40px;          
+            font-size: 20px;
+        }
+
+        .btn{
+            background-color: beige;
+            width: 45px;
+            height: 40px;
+            margin: 6px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Simple Calculator</h2>
+
+<div id="calculator">
+    <input type="text" id="display">
+    <div id="buttons"></div>
+</div>
+
+<script>
+
+let display = document.getElementById("display");
+let buttonsDiv = document.getElementById("buttons");
+
+let btnValues = [
+    "7","8","9","+",
+    "4","5","6","-",
+    "1","2","3","*",
+    "0","C","=","/"
+];
+
+let firstNumber = "";
+let operator = "";
+let secondNumber = "";
+
+for(let i=0; i<btnValues.length; i++){
+
+    let btn = document.createElement("button");
+    btn.innerHTML = btnValues[i];
+    btn.className = "btn";
+
+    buttonsDiv.appendChild(btn);
+
+    btn.addEventListener("click", function(){
+
+        let value = this.innerHTML;
+
+        if(value == "C"){
+            display.value = "";
+            firstNumber = "";
+            secondNumber = "";
+            operator = "";
+        }
+
+        else if(value == "+" || value == "-" || value == "*" || value == "/"){
+            operator = value;
+            firstNumber = display.value;
+            display.value += value;
+        }
+
+        else if(value == "="){
+
+            secondNumber = display.value.split(operator)[1];
+
+            let result = 0;
+
+            if(operator == "+"){
+                result = Number(firstNumber) + Number(secondNumber);
+            }
+            else if(operator == "-"){
+                result = Number(firstNumber) - Number(secondNumber);
+            }
+            else if(operator == "*"){
+                result = Number(firstNumber) * Number(secondNumber);
+            }
+            else if(operator == "/"){
+                result = Number(firstNumber) / Number(secondNumber);
+            }
+
+            display.value = result;
+        }
+
+        else{
+            display.value += value;
+        }
+
+    });
+
+}
+
+</script>
+
+</body>
+</html>
